@@ -22,10 +22,16 @@ function App() {
       {isChatShown ? (
         <Chat socket={socket} username={name} room={room} />
       ) : (
-        <div className="joinChatContainer">
-          <h3>Join a chat</h3>
-          <input placeholder="John" onChange={(e) => setName(e.target.value)} />
-          <input placeholder="Room" onChange={(e) => setRoom(e.target.value)} />
+        <div className="join-container">
+          <h1>Join Chat</h1>
+          <input
+            placeholder="username"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            placeholder="room number"
+            onChange={(e) => setRoom(e.target.value)}
+          />
           <button onClick={joinRoom}>Connect</button>
         </div>
       )}

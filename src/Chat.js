@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const Chat = ({ socket, username, room }) => {
   const [message, setMessage] = useState("");
@@ -31,7 +32,7 @@ const Chat = ({ socket, username, room }) => {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <p>Live Chat</p>
+        <p>Room {room}</p>
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
@@ -64,7 +65,9 @@ const Chat = ({ socket, username, room }) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button onClick={sendMessage}>
+          <FaArrowAltCircleRight />
+        </button>
       </div>
     </div>
   );
